@@ -19,7 +19,7 @@ class G4UserLimits;
 class DetectorConstruction : public G4VUserDetectorConstruction
 {
 public:
-    DetectorConstruction(G4double detectorAngle, G4double targetthic);
+    DetectorConstruction(G4double targetthic);
     virtual ~DetectorConstruction();
 
 //    G4LogicalVolume* GetLogicDetector() const { return fLogActiveDetector; }
@@ -38,7 +38,6 @@ public:
     G4double GetDetectorLength() const;
     G4double GetDetectorRadius() const;
     G4Material* GetDetectorMaterial() const;
-    G4double GetdetAngle() const;
     G4double Gettargetthic() const;
 
 private:
@@ -65,7 +64,6 @@ private:
 
     // Materials
     G4Material* Vacuum;
-    G4LogicalVolume* flogdetector = nullptr;
 
     // Optional
     G4UserLimits* stepLimit;

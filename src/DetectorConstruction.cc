@@ -32,7 +32,6 @@
 
 DetectorConstruction::DetectorConstruction(G4double detectorAngle, G4double targetthic)
     : G4VUserDetectorConstruction(),
-      fdetectorAngle(detectorAngle),
       ftargetthic(targetthic),
       physiWorld(nullptr),
       stepLimit(nullptr),
@@ -45,11 +44,6 @@ DetectorConstruction::DetectorConstruction(G4double detectorAngle, G4double targ
 DetectorConstruction::~DetectorConstruction()
 {
         delete stepLimit;
-}
-
-G4double DetectorConstruction::GetdetAngle() const
-{
-	return fdetectorAngle;
 }
 
 G4double DetectorConstruction::Gettargetthic() const
@@ -117,50 +111,8 @@ void  DetectorConstruction::ConstructSource(G4LogicalVolume* motherLogicalVolume
 //creating the detector
 void   DetectorConstruction::ConstructNeutronDetector(G4LogicalVolume* motherLogicalVolume)
 {
-        //setting up materials to be used
-
-        G4VisAttributes* invisibleAttribs = new G4VisAttributes(false);
-
-	G4NistManager* nist = G4NistManager::Instance();
- 	G4Material* ge = nist->FindOrBuildMaterial("G4_Ge");
-
-        G4double  sphi =   0.*deg;
-        G4double  dphi = 360.*deg;
-
-        G4double angle = fdetectorAngle;
-        G4double distSource = 50. * cm;
-
-        G4double dx = distSource * std::sin(angle);
-        G4double dz = distSource * std::cos(angle);
-
-        G4RotationMatrix* rotation = new G4RotationMatrix();
-        rotation->rotateY(-angle);
-
-
-        //detector
-        G4VSolid *detector = new G4Tubs("Neutron", 0.*mm, detectorRadius, detectorLength, sphi, dphi);
-        G4LogicalVolume * logdetector = new G4LogicalVolume(detector, ge,"logdetector",0,0,0);
-        new G4PVPlacement(rotation,G4ThreeVector(dx ,0, dz),logdetector,"physidetector", motherLogicalVolume,false,0,fCheckOverlaps);
-
-        // assigns as member variable
-        flogdetector = logdetector;
-
-        //visualization attributes
-        G4VisAttributes* detectorVisAtt = new G4VisAttributes(G4Colour(0.0,0.0,1.0,1));
-        logdetector->SetVisAttributes(detectorVisAtt);
-//	G4UserLimits* stepLimit = new G4UserLimits(0.1*mm);
-//	logdetector->SetUserLimits(stepLimit);
 }
 
-//setting up the sensitive detector
-void DetectorConstruction::ConstructSDandField()
-{
-        G4SDManager::GetSDMpointer()->SetVerboseLevel(1);
-        auto *sensdetector = new SensitiveDetector("SensDetector");
-        G4SDManager::GetSDMpointer()->AddNewDetector(sensdetector);
-        flogdetector->SetSensitiveDetector(sensdetector);
-
-}
 
 
 

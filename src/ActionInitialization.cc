@@ -5,7 +5,7 @@
 #include "G4Region.hh"
 #include "G4RegionStore.hh"
 
-ActionInitialization::ActionInitialization(DetectorConstruction* detector, G4double detectorAngle, G4double targetthic) : fDetector(detector), fdetectorAngle(detectorAngle), ftargetthic(targetthic) {}
+ActionInitialization::ActionInitialization(DetectorConstruction* detector, G4double targetthic) : fDetector(detector), ftargetthic(targetthic) {}
 
 ActionInitialization::~ActionInitialization() {}
 

@@ -18,7 +18,6 @@
 
 int main(int argc, char** argv)
 {
-    G4double detectorAngle = 0;
     G4double targetthic = 0;
 
     G4UIExecutive* ui = 0;
@@ -26,23 +25,20 @@ int main(int argc, char** argv)
     if (argc == 1)
     {
 	ui = new G4UIExecutive(argc, argv, "csh");
-        detectorAngle = 60*deg;
 	targetthic = 1 *um;
     }
 
     else if (argc >= 4)
     {
-	detectorAngle = std::stod(argv[2])* deg;
 	targetthic = std::stod(argv[3])* um;
 
-    G4cout << "Angle = " << detectorAngle / deg << " deg" << G4endl;
     G4cout << "Target Thickness = " << targetthic / um << " um" << G4endl;
 
     }
 
     else
     {
-        G4cerr << "Usage: " << argv[0] << "<Detector angle in deg> <Target thickness in um>" << G4endl;
+        G4cerr << "Usage: " << argv[0] << "<Target thickness in um>" << G4endl;
         return 1;
     }
 
@@ -58,11 +54,11 @@ int main(int argc, char** argv)
   auto* runManager = new G4RunManager();
 
   // set mandatory initialization classes
-  DetectorConstruction* det = new DetectorConstruction(detectorAngle, targetthic);
+  DetectorConstruction* det = new DetectorConstruction(targetthic);
   runManager->SetUserInitialization(det);
   PhysicsList* phys = new PhysicsList;
   runManager->SetUserInitialization(phys);
-  runManager->SetUserInitialization(new ActionInitialization(det, detectorAngle, targetthic));
+  runManager->SetUserInitialization(new ActionInitialization(det, targetthic));
 
    runManager->Initialize();
 
