@@ -1,0 +1,65 @@
+#include "SteppingAction.hh"
+#include "G4AnalysisManager.hh"
+#include "G4Neutron.hh"
+#include "G4Proton.hh"
+#include "G4Step.hh"
+#include "G4Track.hh"
+#include "G4RunManager.hh"
+#include "G4SystemOfUnits.hh"
+#include "G4Event.hh"
+
+#include <fstream>
+#include <iomanip>
+
+
+G4int SteppingAction::fTotalNeutroncount = 0;
+G4int SteppingAction::fTotalNeutronproduced = 0;
+SteppingAction::SteppingAction(G4double energy): fBeamEnergy(energy){}
+SteppingAction::~SteppingAction(){}
+
+
+void SteppingAction::UserSteppingAction(const G4Step* step)
+{
+   	G4Track *track = step->GetTrack();
+	if (!track) return;
+
+
+    	if (track->GetParentID() > 0 && track->GetDefinition() == G4Neutron::NeutronDefinition() && track->GetCurrentStepNumber() == 1)
+    	{
+           G4String pname = track->GetDefinition()->GetParticleName();
+
+    G4ThreeVector dir = track->GetMomentumDirection();
+    G4double theta = dir.theta(); // in radians
+    G4double thetaDeg = theta * 180.0 / CLHEP::pi;
+
+    std::ostringstream energyStream;
+    energyStream << std::fixed << std::setprecision(1) << fBeamEnergy;
+    std::string ene = energyStream.str();
+    std::replace(ene.begin(), ene.end(), '.', '_');
+
+std::string filename = "neutron_angles_" + ene + ".txt";
+std::ofstream outFile(filename, std::ios::app);
+    if (outFile.is_open()) {
+        outFile << std::fixed << std::setprecision(4)
+                << thetaDeg << "\t" << track->GetKineticEnergy() << std::endl;
+        outFile.close();
+    }
+
+           G4String process = "unknown";
+           if (track->GetCreatorProcess())
+               process = track->GetCreatorProcess()->GetProcessName();
+
+	   fTotalNeutronproduced++;
+/*         G4cout << "[Secondary] "
+               << pname
+               << " | created by: " << process
+               << " | KE: " << track->GetKineticEnergy() / MeV << " MeV"
+	       <<   thetaDeg << "°"
+
+               << G4endl;
+
+*/
+
+	}
+
+}

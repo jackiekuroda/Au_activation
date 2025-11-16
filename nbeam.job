@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#$ -M jkuroda@nd.edu   # Email address for job notification
+#$ -m abe            # Send mail when job begins, ends and aborts
+#$ -pe smp 24        # Specify parallel environment and legal core size
+#$ -q long           # Specify queue
+#$ -N nbeam      # Specify job name
+
+module use /afs/crc.nd.edu/user/n/nsl/nuclear/x86_64_linux_el6/nsl_modules
+
+module load cmake
+module load root
+module load geant
+
+export G4NEUTRONHPDATA=/groups/aapraham/nuc/nbeam/jkuroda/data/G4NDL4.7.1
+export G4PARTICLEHPDATA=/groups/aapraham/nuc/nbeam/jkuroda/data/G4TENDL1.4
+
+ENERGY="$1.$2"
+./neutron_beam "$ENERGY" run.mac
+
