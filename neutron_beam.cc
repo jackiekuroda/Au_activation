@@ -18,7 +18,6 @@
 
 int main(int argc, char** argv)
 {
-    G4double beamEnergy = 0;
     G4double detectorAngle = 0;
     G4double targetthic = 0;
 
@@ -27,18 +26,15 @@ int main(int argc, char** argv)
     if (argc == 1)
     {
 	ui = new G4UIExecutive(argc, argv, "csh");
-	beamEnergy = 2.5 * MeV;
         detectorAngle = 60*deg;
 	targetthic = 1 *um;
     }
 
     else if (argc >= 4)
     {
-        beamEnergy = std::stod(argv[1]) * MeV;
 	detectorAngle = std::stod(argv[2])* deg;
 	targetthic = std::stod(argv[3])* um;
 
-    G4cout << "Beam Energy = " << beamEnergy / MeV << " MeV" << G4endl;
     G4cout << "Angle = " << detectorAngle / deg << " deg" << G4endl;
     G4cout << "Target Thickness = " << targetthic / um << " um" << G4endl;
 
@@ -46,7 +42,7 @@ int main(int argc, char** argv)
 
     else
     {
-        G4cerr << "Usage: " << argv[0] << " <beamEnergy in MeV> <Detector angle in deg> <Target thickness in um>" << G4endl;
+        G4cerr << "Usage: " << argv[0] << "<Detector angle in deg> <Target thickness in um>" << G4endl;
         return 1;
     }
 
@@ -66,7 +62,7 @@ int main(int argc, char** argv)
   runManager->SetUserInitialization(det);
   PhysicsList* phys = new PhysicsList;
   runManager->SetUserInitialization(phys);
-  runManager->SetUserInitialization(new ActionInitialization(det, beamEnergy, detectorAngle, targetthic));
+  runManager->SetUserInitialization(new ActionInitialization(det, detectorAngle, targetthic));
 
    runManager->Initialize();
 

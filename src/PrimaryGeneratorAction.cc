@@ -11,13 +11,13 @@
 #include "G4ParticleTable.hh"
 
 //creatig the particle source
-PrimaryGeneratorAction::PrimaryGeneratorAction(G4double energy): fBeamEnergy(energy)
+PrimaryGeneratorAction::PrimaryGeneratorAction()
 {
         //setsnumber of particles per event
         fParticleGun = new G4ParticleGun(1);
         //for testing
         fParticleGun->SetParticleDefinition(G4Proton::ProtonDefinition());
-	fParticleGun->SetParticleEnergy(fBeamEnergy);
+	fParticleGun->SetParticleEnergy(1*MeV);
         fParticleGun->SetParticlePosition(G4ThreeVector(0,0,-1*cm));
         fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
 }

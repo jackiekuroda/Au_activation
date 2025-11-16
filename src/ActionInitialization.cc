@@ -5,7 +5,7 @@
 #include "G4Region.hh"
 #include "G4RegionStore.hh"
 
-ActionInitialization::ActionInitialization(DetectorConstruction* detector,G4double beamEnergy, G4double detectorAngle, G4double targetthic) : fDetector(detector), fBeamEnergy(beamEnergy), fdetectorAngle(detectorAngle), ftargetthic(targetthic) {}
+ActionInitialization::ActionInitialization(DetectorConstruction* detector, G4double detectorAngle, G4double targetthic) : fDetector(detector), fdetectorAngle(detectorAngle), ftargetthic(targetthic) {}
 
 ActionInitialization::~ActionInitialization() {}
 
@@ -18,7 +18,7 @@ void ActionInitialization::BuildForMaster() const
 
 void ActionInitialization::Build() const
 {
-  PrimaryGeneratorAction* generator = new PrimaryGeneratorAction(fBeamEnergy);
+  PrimaryGeneratorAction* generator = new PrimaryGeneratorAction();
   SetUserAction(generator);
 
   RunAction* runAction = new RunAction(fDetector, generator);

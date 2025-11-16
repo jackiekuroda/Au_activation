@@ -8,7 +8,7 @@
 class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 {
   public:
-    PrimaryGeneratorAction(G4double energy);
+    PrimaryGeneratorAction();
     ~PrimaryGeneratorAction() override;
     G4double GetBeamEnergy() const;
 
@@ -17,7 +17,6 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
 
   private:
     G4ParticleGun* fParticleGun;
-    G4double fBeamEnergy;
 };
 
 

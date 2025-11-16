@@ -12,7 +12,7 @@ class ActionInitialization : public G4VUserActionInitialization
 
 {
 public:
-    ActionInitialization(DetectorConstruction* detector, G4double beamEnergy, G4double detectorAngle, G4double targetthic);
+    ActionInitialization(DetectorConstruction* detector, G4double detectorAngle, G4double targetthic);
     ~ActionInitialization();
 
 
@@ -21,7 +21,6 @@ public:
 
 private:
     DetectorConstruction* fDetector;
-    G4double fBeamEnergy;
     G4double fdetectorAngle;
     G4double ftargetthic;
 };
