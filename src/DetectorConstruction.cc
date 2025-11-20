@@ -86,18 +86,18 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 void  DetectorConstruction::ConstructSource(G4LogicalVolume* motherLogicalVolume)
 {
 	G4NistManager* nist = G4NistManager::Instance();
-        G4Isotope* Li7 = new G4Isotope("Li7", 3, 7, 7.016*g/mole);
-        G4Element * elLi7 = new G4Element("Lith7", "Li7", 1);
-        elLi7->AddIsotope(Li7, 100.*perCent);
+        G4Isotope* Au197 = new G4Isotope("Au197", 79, 197, 196.967*g/mole);
+        G4Element * elAu197 = new G4Element("Gold197", "Au197", 1);
+        elAu197->AddIsotope(Au197, 100.*perCent);
 
-        G4Material* Lithium  = new G4Material("Li7Material", 0.534*g/cm3, 1);
-        Lithium ->AddElement(elLi7, 1);
+        G4Material* Gold  = new G4Material("Au197Material", 19.32*g/cm3, 1);
+        Gold ->AddElement(elAu197, 1);
 
         G4double  sphi =   0.*deg;
         G4double  dphi = 360.*deg;
 
         G4VSolid * sourceShape = new G4Tubs("sourceShape", 0.*cm, 1*mm , ftargetthic , sphi, dphi);
-        G4LogicalVolume * logSource= new G4LogicalVolume(sourceShape,Lithium,"logsource",0,0,0);
+        G4LogicalVolume * logSource= new G4LogicalVolume(sourceShape, Gold, "logsource",0,0,0);
 
         new G4PVPlacement(0,G4ThreeVector(0.,0., 0. ),logSource,"physsource",motherLogicalVolume,false,0,fCheckOverlaps);
 

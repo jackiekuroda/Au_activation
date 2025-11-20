@@ -28,13 +28,13 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
                process = track->GetCreatorProcess()->GetProcessName();
 
            fTotalNeutronproduced++;
-/*
+
          G4cout << "[Secondary] "
                << pname
                << " | created by: " << process
                << " | KE: " << track->GetKineticEnergy() / MeV << " MeV"
                << G4endl;
-*/
+
         }
 
 
