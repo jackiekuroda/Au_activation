@@ -1,0 +1,7 @@
+/storage/Jackie/Au_activation_test/build/CMakeFiles/neutron_beam.dir
+/storage/Jackie/Au_activation_test/build/CMakeFiles/edit_cache.dir
+/storage/Jackie/Au_activation_test/build/CMakeFiles/rebuild_cache.dir
+/storage/Jackie/Au_activation_test/build/CMakeFiles/list_install_components.dir
+/storage/Jackie/Au_activation_test/build/CMakeFiles/install.dir
+/storage/Jackie/Au_activation_test/build/CMakeFiles/install/local.dir
+/storage/Jackie/Au_activation_test/build/CMakeFiles/install/strip.dir

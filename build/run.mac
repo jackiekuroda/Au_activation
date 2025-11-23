@@ -1,0 +1,9 @@
+/control/verbose 1
+/tracking/verbose 0
+/run/verbose 1
+/event/verbose 0
+
+/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
+
+/run/initialize
+/run/beamOn 100000
