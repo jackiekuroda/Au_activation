@@ -18,78 +18,65 @@
 
 int main(int argc, char** argv)
 {
-    G4double targetthic = 0;
+	G4UIExecutive* ui = 0;
 
-    G4UIExecutive* ui = 0;
+	if (argc == 1)
+    	{
+		ui = new G4UIExecutive(argc, argv, "csh");
+	}
 
-    if (argc == 1)
-    {
-	ui = new G4UIExecutive(argc, argv, "csh");
-	targetthic = 1 *um;
-    }
+	// detect interactive mode (if no arguments) and define UI session
+  	CLHEP::HepRandom::setTheSeed(time(NULL));
 
-    else if (argc >= 4)
-    {
-	targetthic = std::stod(argv[3])* um;
+  	// use G4SteppingVerboseWithUnits
+ 	 G4int precision = 4;
+  	G4SteppingVerbose::UseBestUnit(precision);
 
-    G4cout << "Target Thickness = " << targetthic / um << " um" << G4endl;
+  	// construct the run manager
 
-    }
+  	auto* runManager = new G4RunManager();
 
-    else
-    {
-        G4cerr << "Usage: " << argv[0] << "<Target thickness in um>" << G4endl;
-        return 1;
-    }
+  	// set mandatory initialization classes
+  	DetectorConstruction* det = new DetectorConstruction();
+  	runManager->SetUserInitialization(det);
+  	PhysicsList* phys = new PhysicsList;
+  	runManager->SetUserInitialization(phys);
+  	runManager->SetUserInitialization(new ActionInitialization(det));
 
-  // detect interactive mode (if no arguments) and define UI session
-  CLHEP::HepRandom::setTheSeed(time(NULL));
+   	runManager->Initialize();
 
-  // use G4SteppingVerboseWithUnits
-  G4int precision = 4;
-  G4SteppingVerbose::UseBestUnit(precision);
+  	// initialize visualization
 
-  // construct the run manager
+  	G4VisManager* visManager = nullptr;
 
-  auto* runManager = new G4RunManager();
-
-  // set mandatory initialization classes
-  DetectorConstruction* det = new DetectorConstruction(targetthic);
-  runManager->SetUserInitialization(det);
-  PhysicsList* phys = new PhysicsList;
-  runManager->SetUserInitialization(phys);
-  runManager->SetUserInitialization(new ActionInitialization(det, targetthic));
-
-   runManager->Initialize();
-
-  // initialize visualization
-
-  G4VisManager* visManager = nullptr;
-
-  // get the pointer to the User Interface manager
+  	// get the pointer to the User Interface manager
 
 
- G4UImanager* UImanager = G4UImanager::GetUIpointer();
+ 	G4UImanager* UImanager = G4UImanager::GetUIpointer();
 
-  if (ui) {
-    // interactive mode
-    visManager = new G4VisExecutive;
-    visManager->Initialize();
-    ui->SessionStart();
-    delete ui;
-  }
-  else {
-    // batch mode
-    G4String command = "/control/execute ";
-    G4String fileName = argv[4];
-    UImanager->ApplyCommand(command + fileName);
-  }
+  	if (ui)
+	{
+    		// interactive mode
+    		visManager = new G4VisExecutive;
+    		visManager->Initialize();
+    		ui->SessionStart();
+   	 	delete ui;
+  	}
 
-  // job termination
-  delete visManager;
+	else
+	{
+    		// batch mode
+    		G4String command = "/control/execute ";
+    		G4String fileName = argv[1];
+    		UImanager->ApplyCommand(command + fileName);
+  	}
 
 
-  delete runManager;
+	  // job termination
+	  delete visManager;
+
+
+  	delete runManager;
 
 
 }

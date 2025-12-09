@@ -3688,9 +3688,6 @@ CMakeFiles/neutron_beam.dir/src/RunAction.cc.o
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4TrajectoryContainer.hh
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4VTrajectory.hh
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4VUserEventInformation.hh
- /storage/Jackie/Au_activation_test/include/SteppingAction.hh
- /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4UserSteppingAction.hh
- /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4VUserTrackInformation.hh
  /storage/Jackie/Au_activation_test/include/DetectorConstruction.hh
  /storage/Jackie/Au_activation_test/include/PrimaryGeneratorAction.hh
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4RunManager.hh

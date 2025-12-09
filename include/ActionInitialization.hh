@@ -9,18 +9,17 @@
 #include "SteppingAction.hh"
 
 class ActionInitialization : public G4VUserActionInitialization
-
 {
-public:
-    ActionInitialization(DetectorConstruction* detector, G4double targetthic);
-    ~ActionInitialization();
+	public:
+    		ActionInitialization(DetectorConstruction* detector);
+    		~ActionInitialization();
 
 
-    virtual void BuildForMaster() const;
-    virtual void Build() const;
+    	virtual void BuildForMaster() const;
+   	virtual void Build() const;
 
-private:
-    DetectorConstruction* fDetector;
-    G4double ftargetthic;
+	private:
+		DetectorConstruction* fDetector;
 };
+
 #endif

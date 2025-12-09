@@ -1,6 +1,4 @@
 #include "DetectorConstruction.hh"
-#include "SensitiveDetector.hh"
-
 #include "G4Material.hh"
 #include "G4Box.hh"
 #include "G4Tubs.hh"
@@ -30,9 +28,8 @@
 #include "G4Torus.hh"
 #include "G4Cons.hh"
 
-DetectorConstruction::DetectorConstruction(G4double detectorAngle, G4double targetthic)
+DetectorConstruction::DetectorConstruction()
     : G4VUserDetectorConstruction(),
-      ftargetthic(targetthic),
       physiWorld(nullptr),
       stepLimit(nullptr),
       fCheckOverlaps(true)
@@ -44,11 +41,6 @@ DetectorConstruction::DetectorConstruction(G4double detectorAngle, G4double targ
 DetectorConstruction::~DetectorConstruction()
 {
         delete stepLimit;
-}
-
-G4double DetectorConstruction::Gettargetthic() const
-{
-        return ftargetthic;
 }
 
 void DetectorConstruction::DefineMaterials()
@@ -72,9 +64,6 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
         physiWorld = new G4PVPlacement(nullptr, G4ThreeVector(), logicWorld, "PhysiWorld", nullptr, false, 0, fCheckOverlaps);
 
-        // Add detector components
-        ConstructNeutronDetector(logicWorld);
-
         //add the source
         ConstructSource(logicWorld);
 
@@ -96,7 +85,7 @@ void  DetectorConstruction::ConstructSource(G4LogicalVolume* motherLogicalVolume
         G4double  sphi =   0.*deg;
         G4double  dphi = 360.*deg;
 
-        G4VSolid * sourceShape = new G4Tubs("sourceShape", 0.*cm, 1*mm , ftargetthic , sphi, dphi);
+        G4VSolid * sourceShape = new G4Tubs("sourceShape", 0.*cm, 22.225/2*mm , 1.27/2*mm , sphi, dphi);
         G4LogicalVolume * logSource= new G4LogicalVolume(sourceShape, Gold, "logsource",0,0,0);
 
         new G4PVPlacement(0,G4ThreeVector(0.,0., 0. ),logSource,"physsource",motherLogicalVolume,false,0,fCheckOverlaps);
@@ -104,14 +93,9 @@ void  DetectorConstruction::ConstructSource(G4LogicalVolume* motherLogicalVolume
         G4VisAttributes* visAttSource = new G4VisAttributes(G4Colour(0,0.2,1.0));
         visAttSource->G4VisAttributes::SetForceSolid(true);
         logSource->SetVisAttributes(visAttSource);
-	flogSource = logSource;
 }
 
 
-//creating the detector
-void   DetectorConstruction::ConstructNeutronDetector(G4LogicalVolume* motherLogicalVolume)
-{
-}
 
 
 

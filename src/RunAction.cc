@@ -1,6 +1,4 @@
 #include "RunAction.hh"
-#include "SensitiveDetector.hh"
-#include "SteppingAction.hh"
 
 #include "DetectorConstruction.hh"
 #include "PrimaryGeneratorAction.hh"
@@ -30,8 +28,5 @@ void RunAction::EndOfRunAction(const G4Run *run)
 {
     G4int runID = run->GetRunID();
     G4cout << "Finishing run " << runID << G4endl;
-    G4cout << "Total neutrons produced " << SteppingAction::fTotalNeutronproduced << G4endl;
-    G4cout << "Total neutrons detected " << SteppingAction::fTotalNeutroncount << G4endl;
-    SteppingAction::fTotalNeutroncount = 0;
 }
 

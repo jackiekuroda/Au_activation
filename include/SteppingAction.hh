@@ -20,8 +20,6 @@ class G4ParticleDefinition;
 class SteppingAction : public G4UserSteppingAction
 {
   public:
-   static G4int fTotalNeutroncount;
-   static G4int fTotalNeutronproduced;
     SteppingAction();
     virtual ~SteppingAction();
 

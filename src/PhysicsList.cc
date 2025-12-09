@@ -32,7 +32,8 @@
 #include "G4EmParameters.hh"
 #include "G4EmStandardPhysics.hh"
 
-
+#include "G4UAtomicDeexcitation.hh"
+#include "G4LossTableManager.hh"
 
 PhysicsList::PhysicsList()
 {
@@ -51,10 +52,10 @@ PhysicsList::PhysicsList()
   RegisterPhysics(new G4EmStandardPhysics());
 
   // Radioactive decay
-//  RegisterPhysics(new G4DecayPhysics());
-//  auto* radDec = new G4RadioactiveDecayPhysics();
-//  radDec->SetVerboseLevel(1);
-//  RegisterPhysics(radDec);
+  RegisterPhysics(new G4DecayPhysics());
+  auto* radDec = new G4RadioactiveDecayPhysics();
+  radDec->SetVerboseLevel(1);
+  RegisterPhysics(radDec);
 
   RegisterPhysics(new G4HadronPhysicsQGSP_BIC_AllHP(verb));
   RegisterPhysics( new G4IonPhysics(verb));
@@ -81,6 +82,11 @@ void PhysicsList::ConstructProcess()
 {
 G4VModularPhysicsList::ConstructProcess();
 
+auto* de = new G4UAtomicDeexcitation();
+de->SetFluo(true);
+de->SetAuger(true);
+de->SetPIXE(true);
+G4LossTableManager::Instance()->SetAtomDeexcitation(de);
 
 }
 
@@ -109,7 +115,9 @@ void PhysicsList::ConstructParticle()
 void PhysicsList::SetCuts()
 {
   SetCutsWithDefault();
-  G4ProductionCutsTable::GetProductionCutsTable()->SetEnergyRange(0.001*eV, 100*GeV);
+  SetCutValue(1*um, "gamma");
+  SetCutValue(1*um, "e-");
+  SetCutValue(1*um, "e+");
 }
 
 

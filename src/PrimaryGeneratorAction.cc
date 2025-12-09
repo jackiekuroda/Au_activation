@@ -16,8 +16,8 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
         //setsnumber of particles per event
         fParticleGun = new G4ParticleGun(1);
         //for testing
-        fParticleGun->SetParticleDefinition(G4Proton::ProtonDefinition());
-	fParticleGun->SetParticleEnergy(1*MeV);
+        fParticleGun->SetParticleDefinition(G4Neutron::NeutronDefinition());
+	fParticleGun->SetParticleEnergy(5*MeV);
         fParticleGun->SetParticlePosition(G4ThreeVector(0,0,-1*cm));
         fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
 }
@@ -27,11 +27,6 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
    //creating an event
 
    fParticleGun->GeneratePrimaryVertex(anEvent);
-}
-
-G4double PrimaryGeneratorAction::GetBeamEnergy() const
-{
-    return fBeamEnergy;
 }
 
 PrimaryGeneratorAction::~PrimaryGeneratorAction()
