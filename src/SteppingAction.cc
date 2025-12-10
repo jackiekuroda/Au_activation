@@ -18,8 +18,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
         G4Track *track = step->GetTrack();
         if (!track) return;
 
-
-        if (track->GetDefinition() == G4Gamma::GammaDefinition() && track->GetCurrentStepNumber() == 1)
+        if (track->GetDefinition() == G4Gamma::GammaDefinition())
         {
            G4String pname = track->GetDefinition()->GetParticleName();
            G4String process = "unknown";
@@ -29,18 +28,18 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
 
 		if( process == "nCapture" ||
 		    process == "NeutronCapture" ||
-		    //process == "nInelastic" ||
+		    process == "Radioactivation" ||
 		    process == "RadioactiveDecay")
 		{
          		G4cout  << "[Gamma created]"
                			<< " | created by: " << process
-               			<< " | KE: " << track->GetKineticEnergy() / MeV << " MeV"
+               			<< " | KE: " << step->GetPreStepPoint()->GetKineticEnergy() / MeV << " MeV"
                			<< G4endl;
 
 		}
         }
 
-	if(track->GetDefinition()->GetParticleType()=="nucleus" && track->GetCurrentStepNumber()== 1)
+	if(track->GetDefinition()->GetParticleType()=="nucleus")
 	{
 	   const G4DynamicParticle* dyn = track->GetDynamicParticle();
 	   const G4ParticleDefinition* def = dyn->GetDefinition();
@@ -48,7 +47,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
 	   G4int Z = def->GetAtomicNumber();
 	   G4int A = def->GetAtomicMass();
 
-	   if (Z==79)
+	   if (Z==80)
 	   {
 	       G4String process = "unknown";
 	       if (track->GetCreatorProcess())
