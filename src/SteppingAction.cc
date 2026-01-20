@@ -56,7 +56,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
          		G4cout  << "[Hg Created]"
                			<< " | A=" << A
 				<< " | created by: " << process
-               			<< " | KE: " << track->GetKineticEnergy() / MeV << " MeV"
+               			<< " | KE: " << step->GetPreStepPoint()->GetKineticEnergy() / MeV << " MeV"
                			<< G4endl;
 
 		}
