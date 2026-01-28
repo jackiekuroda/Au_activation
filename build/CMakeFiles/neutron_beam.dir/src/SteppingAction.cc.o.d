@@ -591,4 +591,6 @@ CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o: \
  /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
  /usr/include/c++/11/bits/list.tcc \
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4SystemOfUnits.hh \
- /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4Event.hh
+ /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4Event.hh \
+ /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4UnitsTable.hh \
+ /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4UnitsTable.icc

@@ -8,7 +8,7 @@
 #include "G4RunManager.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4Event.hh"
-#include "G4UnitsTable.hh"
+
 SteppingAction::SteppingAction(){}
 SteppingAction::~SteppingAction(){}
 
@@ -24,13 +24,15 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
            G4String process = "unknown";
            if (track->GetCreatorProcess())
                process = track->GetCreatorProcess()->GetProcessName();
-		//if( process == "nCapture" ||
-		//    process == "NeutronCapture" ||
-		//    process == "Radioactivation" ||
-		//    process == "RadioactiveDecay")
+
+
+		if( process == "nCapture" ||
+		    process == "NeutronCapture" ||
+		    process == "Radioactivation" ||
+		    process == "RadioactiveDecay")
 		{
          		G4cout  << "[Gamma created]"
-				<< "Time" <<track->GetGlobalTime()
+				<< "Time"
                			<< " | created by: " << process
                			<< " | KE: " << step->GetPreStepPoint()->GetKineticEnergy() / MeV << " MeV"
                			<< G4endl;

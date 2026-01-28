@@ -1,4 +1,5 @@
 #include "ActionInitialization.hh"
+#include "StackingAction.hh"
 #include "SteppingAction.hh"
 #include "PrimaryGeneratorAction.hh"
 
@@ -23,6 +24,9 @@ void ActionInitialization::Build() const
 
   RunAction* runAction = new RunAction(fDetector, generator);
   SetUserAction(runAction);
+
+  StackingAction* stackAction = new StackingAction();
+  SetUserAction(stackAction);
 
   SteppingAction* stepAction = new SteppingAction();
   SetUserAction(stepAction);

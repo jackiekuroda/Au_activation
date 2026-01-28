@@ -400,6 +400,10 @@ CMakeFiles/neutron_beam.dir/src/ActionInitialization.cc.o: \
  /storage/Jackie/Au_activation_test/include/SteppingAction.hh \
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4UserSteppingAction.hh \
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4VUserTrackInformation.hh \
+ /storage/Jackie/Au_activation_test/include/StackingAction.hh \
+ /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4UserStackingAction.hh \
+ /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4ClassificationOfNewTrack.hh \
+ /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4ClassificationOfNewTrack.hh \
  /storage/Jackie/Au_activation_test/include/SteppingAction.hh \
  /storage/Jackie/Au_activation_test/include/PrimaryGeneratorAction.hh \
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4Region.hh \

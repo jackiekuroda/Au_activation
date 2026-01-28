@@ -5,13 +5,13 @@
 #include "G4ClassificationOfNewTrack.hh"
 #include "globals.hh"
 
-class G4Track
+//class G4Track
 
 class StackingAction : public G4UserStackingAction
 {
    public:
-	StackingAction() = default;
-	~StackingAction() override = default;
+	StackingAction();
+	~StackingAction() override;
 
 	G4ClassificationOfNewTrack ClassifyNewTrack(const G4Track*) override;
 

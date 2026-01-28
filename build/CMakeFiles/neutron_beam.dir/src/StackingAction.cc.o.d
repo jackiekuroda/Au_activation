@@ -406,6 +406,9 @@ CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o: \
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4TrajectoryContainer.hh \
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4VTrajectory.hh \
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4VUserEventInformation.hh \
+ /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4Gamma.hh \
+ /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4Neutron.hh \
+ /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4Ions.hh \
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4EventManager.hh \
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4StackManager.hh \
  /opt/geant4/geant4-v11.2.2/install/include/Geant4/G4UserStackingAction.hh \
