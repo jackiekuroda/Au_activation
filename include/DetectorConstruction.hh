@@ -24,12 +24,8 @@ public:
 
     virtual G4VPhysicalVolume* Construct();
 
-    DetectorConstruction(G4double outerDeadLayerThick);
-    virtual ~DetectorConstruction();
-
     G4LogicalVolume* GetLogicDetector() const { return fLogActiveCrystal; }
 
-    virtual G4VPhysicalVolume* Construct();
     virtual void ConstructSDandField();
 
 
@@ -43,46 +39,46 @@ public:
     void SetShellThick(G4double value);
     void SetEndGap(G4double value);
     void SetholderLength(G4double value);
-   void SetholderThick(G4double value);
-   void SetholderTopThick(G4double value);
-   void SetholderBottomThick(G4double value);
-   void SetmylarThick (G4double value);
-   void SetkaptonThick (G4double value);
-   void SetCrystalRadius (G4double value);
-   void SetCrystalHalfLength (G4double value);
-   void SetCrystalEndRadius (G4double value);
-   void SetHoleDepth(G4double value);
-   void SetHoleRadius(G4double value);
-   void SetOuterDeadLayerThick(G4double value);
-   void SetInnerDeadLayerThick(G4double value);
-   void UpdateGeometry();
-   void SetSourceMove(G4double value);
+    void SetholderThick(G4double value);
+    void SetholderTopThick(G4double value);
+    void SetholderBottomThick(G4double value);
+    void SetmylarThick (G4double value);
+    void SetkaptonThick (G4double value);
+    void SetCrystalRadius (G4double value);
+    void SetCrystalHalfLength (G4double value);
+    void SetCrystalEndRadius (G4double value);
+    void SetHoleDepth(G4double value);
+    void SetHoleRadius(G4double value);
+    void SetOuterDeadLayerThick(G4double value);
+    void SetInnerDeadLayerThick(G4double value);
+    void UpdateGeometry();
+    void SetSourceMove(G4double value);
 
-   void SetDetectorLength(G4double length);
-   void SetDetectorThickness(G4double thickness);
-   void SetDetectorMaterial(const G4String& name);
+    void SetDetectorLength(G4double length);
+    void SetDetectorThickness(G4double thickness);
+    void SetDetectorMaterial(const G4String& name);
 
-   G4double GetouterDeadLayerThick() const {return fouterDeadLayerThick;};
+    G4double GetouterDeadLayerThick() const {return outerDeadLayerThick;};
 
-   G4double GetinnerDeadLayerThick() const {return innerDeadLayerThick;}
+    G4double GetinnerDeadLayerThick() const {return innerDeadLayerThick;}
 
-   G4double GetCrystalRadius() const {return crystalRadius;}
-   G4double GetCrystalHalfLength() const {return crystalHalfLength;}
+    G4double GetCrystalRadius() const {return crystalRadius;}
+    G4double GetCrystalHalfLength() const {return crystalHalfLength;}
 
-   G4double GetShellRadius() const {return shellRadius;}
-   G4double GetShellLength() const {return shellLength;}
-   G4double GetShellThick() const {return shellThick;}
+    G4double GetShellRadius() const {return shellRadius;}
+    G4double GetShellLength() const {return shellLength;}
+    G4double GetShellThick() const {return shellThick;}
 
-   G4double GetholderLength() const {return holderLength;}
-   G4double GetholderThick() const {return holderThick;}
-   G4double GetholderTopThick() const {return holderTopThick;}
-   G4double GetholderBottomThick() const {return holderBottomThick;}
+    G4double GetholderLength() const {return holderLength;}
+    G4double GetholderThick() const {return holderThick;}
+    G4double GetholderTopThick() const {return holderTopThick;}
+    G4double GetholderBottomThick() const {return holderBottomThick;}
 
-   G4double GetkaptonThick() const {return kaptonThick;}
-   G4double GetmylarThick() const {return mylarThick;}
+    G4double GetkaptonThick() const {return kaptonThick;}
+    G4double GetmylarThick() const {return mylarThick;}
 
-   G4double GetHoleDepth() const {return holeDepth;}
-   G4double GetHoleRadius() const {return holeRadius;}
+    G4double GetHoleDepth() const {return holeDepth;}
+    G4double GetHoleRadius() const {return holeRadius;}
 
     G4double Gettargetthic() const;
 
@@ -113,8 +109,7 @@ private:
     G4double crystalEndRadius;
     G4double holeDepth;
     G4double holeRadius;
-    //G4double outerDeadLayerThick;
-    G4double fouterDeadLayerThick;
+    G4double outerDeadLayerThick;
     G4double innerDeadLayerThick;
 
     //holder

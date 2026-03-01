@@ -18,7 +18,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
         //for testing
         fParticleGun->SetParticleDefinition(G4Neutron::NeutronDefinition());
 	fParticleGun->SetParticleEnergy(5*MeV);
-        fParticleGun->SetParticlePosition(G4ThreeVector(0,0,-1*cm));
+        fParticleGun->SetParticlePosition(G4ThreeVector(0,0,-11*cm));
         fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
 }
 //for the event creation

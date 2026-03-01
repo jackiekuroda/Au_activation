@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/neutron_beam.dir/src/PrimaryGeneratorAction.cc.o.d"
   "CMakeFiles/neutron_beam.dir/src/RunAction.cc.o"
   "CMakeFiles/neutron_beam.dir/src/RunAction.cc.o.d"
+  "CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o"
+  "CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o.d"
   "CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o"
   "CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o.d"
   "CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o"

@@ -18,12 +18,13 @@ void SensitiveDetector::Initialize(G4HCofThisEvent *)
 
 G4bool SensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *)
 {
+    G4Track *track = aStep->GetTrack();
     //ignores neutrons used for activation
     if (track->GetDefinition() == G4Neutron::Neutron() && track->GetParentID() == 0)
     {
         return true;
     }
- 
+
     G4double edep = aStep->GetTotalEnergyDeposit();
     fTotalEnergyDeposited += edep;
     return true;

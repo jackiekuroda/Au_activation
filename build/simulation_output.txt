@@ -1,0 +1,125 @@
+
+======= Run Summary =======
+
+--- Source ---
+ Total events simulated: 1000
+
+--- Detector Parameters ---
+ Crystal radius: 34.1 mm 
+ Crystal length: 35.1 mm 
+ Outer dead layer thickness: 0.5 mm 
+ Inner dead layer thickness: 0.0003 mm 
+ Detector endcap outer radius: 50.85 mm 
+ Detector endcap length: 148.1 mm 
+ Detector endcap thickness: 1.5 mm 
+ Crystal holder outer radius: 34.86 mm 
+ Crystal holder length: 105 mm 
+ Crystal holder thickness: 0.76 mm 
+ Top of Crystal holder thickness: 0.03 mm 
+ Bottom of Crystal holder thickness: 3.2 mm 
+ Bore hole depth: 39.5 mm 
+ Bore hole radius: 4 mm 
+
+--- Materials ---
+ IR window material:  Material: G4_MYLAR    density:  1.400 g/cm3   RadL:  28.536 cm   Nucl.Int.Length:  55.923 cm 
+                       Imean:  78.700 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:  62.50 %  ElmAbundance  45.45 % 
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction:   4.20 %  ElmAbundance  36.36 % 
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  33.30 %  ElmAbundance  18.18 % 
+
+ Material: G4_MYLAR    density:  1.400 g/cm3   RadL:  28.536 cm   Nucl.Int.Length:  55.923 cm 
+                       Imean:  78.700 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:  62.50 %  ElmAbundance  45.45 % 
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction:   4.20 %  ElmAbundance  36.36 % 
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  33.30 %  ElmAbundance  18.18 % 
+
+ Crystal holder material:  Material:    G4_Al    density:  2.699 g/cm3   RadL:   8.896 cm   Nucl.Int.Length:  38.894 cm 
+                       Imean: 166.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Al (Al)   Z = 13.0   N =    27   A = 26.982 g/mole
+         --->  Isotope:  Al27   Z = 13   N =  27   A =  26.98 g/mole   abundance: 100.000 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+ Endcap material:  Material:    G4_Al    density:  2.699 g/cm3   RadL:   8.896 cm   Nucl.Int.Length:  38.894 cm 
+                       Imean: 166.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Al (Al)   Z = 13.0   N =    27   A = 26.982 g/mole
+         --->  Isotope:  Al27   Z = 13   N =  27   A =  26.98 g/mole   abundance: 100.000 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+ Outer dead layer material:  Material:    G4_Ge    density:  5.323 g/cm3   RadL:   2.301 cm   Nucl.Int.Length:  27.431 cm 
+                       Imean: 350.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Ge (Ge)   Z = 32.0   N =    73   A = 72.613 g/mole
+         --->  Isotope:  Ge70   Z = 32   N =  70   A =  69.92 g/mole   abundance: 20.840 %
+         --->  Isotope:  Ge72   Z = 32   N =  72   A =  71.92 g/mole   abundance: 27.540 %
+         --->  Isotope:  Ge73   Z = 32   N =  73   A =  72.92 g/mole   abundance:  7.730 %
+         --->  Isotope:  Ge74   Z = 32   N =  74   A =  73.92 g/mole   abundance: 36.280 %
+         --->  Isotope:  Ge76   Z = 32   N =  76   A =  75.92 g/mole   abundance:  7.610 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+ Inner dead layer material:  Material:    G4_Ge    density:  5.323 g/cm3   RadL:   2.301 cm   Nucl.Int.Length:  27.431 cm 
+                       Imean: 350.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Ge (Ge)   Z = 32.0   N =    73   A = 72.613 g/mole
+         --->  Isotope:  Ge70   Z = 32   N =  70   A =  69.92 g/mole   abundance: 20.840 %
+         --->  Isotope:  Ge72   Z = 32   N =  72   A =  71.92 g/mole   abundance: 27.540 %
+         --->  Isotope:  Ge73   Z = 32   N =  73   A =  72.92 g/mole   abundance:  7.730 %
+         --->  Isotope:  Ge74   Z = 32   N =  74   A =  73.92 g/mole   abundance: 36.280 %
+         --->  Isotope:  Ge76   Z = 32   N =  76   A =  75.92 g/mole   abundance:  7.610 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+--- Physics ---
+ -  G4EmStandard
+ -  Decay
+ -  G4RadioactiveDecay
+ -  hInelastic QGSP_BIC_AllHP
+ -  ionInelasticFTFP_BIC
+ -  hElasticWEL_CHIPS_HP
+ -  IonElasticPhysics
+
+--- Production cuts per region ---
+
+Region: DefaultRegionForTheWorld
+   Gamma cut:   0.001 mm
+   e- cut:      0.001 mm
+   e+ cut:      0.001 mm
+   Proton cut:  1 mm
+
+Region: DefaultRegionForParallelWorld
+   Gamma cut:   0.001 mm
+   e- cut:      0.001 mm
+   e+ cut:      0.001 mm
+   Proton cut:  1 mm
+
+--- Electromagnetic parameters ---
+   Fluorescence enabled: Yes
+   Auger enabled: Yes
+   PIXIE enabled: Yes

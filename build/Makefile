@@ -318,6 +318,30 @@ src/RunAction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neutron_beam.dir/build.make CMakeFiles/neutron_beam.dir/src/RunAction.cc.s
 .PHONY : src/RunAction.cc.s
 
+src/SensitiveDetector.o: src/SensitiveDetector.cc.o
+.PHONY : src/SensitiveDetector.o
+
+# target to build an object file
+src/SensitiveDetector.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neutron_beam.dir/build.make CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o
+.PHONY : src/SensitiveDetector.cc.o
+
+src/SensitiveDetector.i: src/SensitiveDetector.cc.i
+.PHONY : src/SensitiveDetector.i
+
+# target to preprocess a source file
+src/SensitiveDetector.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neutron_beam.dir/build.make CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.i
+.PHONY : src/SensitiveDetector.cc.i
+
+src/SensitiveDetector.s: src/SensitiveDetector.cc.s
+.PHONY : src/SensitiveDetector.s
+
+# target to generate assembly for a file
+src/SensitiveDetector.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neutron_beam.dir/build.make CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.s
+.PHONY : src/SensitiveDetector.cc.s
+
 src/StackingAction.o: src/StackingAction.cc.o
 .PHONY : src/StackingAction.o
 
@@ -397,6 +421,9 @@ help:
 	@echo "... src/RunAction.o"
 	@echo "... src/RunAction.i"
 	@echo "... src/RunAction.s"
+	@echo "... src/SensitiveDetector.o"
+	@echo "... src/SensitiveDetector.i"
+	@echo "... src/SensitiveDetector.s"
 	@echo "... src/StackingAction.o"
 	@echo "... src/StackingAction.i"
 	@echo "... src/StackingAction.s"

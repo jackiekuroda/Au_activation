@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/storage/Jackie/Au_activation_test/src/PhysicsList.cc" "CMakeFiles/neutron_beam.dir/src/PhysicsList.cc.o" "gcc" "CMakeFiles/neutron_beam.dir/src/PhysicsList.cc.o.d"
   "/storage/Jackie/Au_activation_test/src/PrimaryGeneratorAction.cc" "CMakeFiles/neutron_beam.dir/src/PrimaryGeneratorAction.cc.o" "gcc" "CMakeFiles/neutron_beam.dir/src/PrimaryGeneratorAction.cc.o.d"
   "/storage/Jackie/Au_activation_test/src/RunAction.cc" "CMakeFiles/neutron_beam.dir/src/RunAction.cc.o" "gcc" "CMakeFiles/neutron_beam.dir/src/RunAction.cc.o.d"
+  "/storage/Jackie/Au_activation_test/src/SensitiveDetector.cc" "CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o" "gcc" "CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o.d"
   "/storage/Jackie/Au_activation_test/src/StackingAction.cc" "CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o" "gcc" "CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o.d"
   "/storage/Jackie/Au_activation_test/src/SteppingAction.cc" "CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o" "gcc" "CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o.d"
   )

@@ -153,10 +153,24 @@ CMakeFiles/neutron_beam.dir/src/RunAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/neutron_beam.dir/src/RunAction.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage/Jackie/Au_activation_test/src/RunAction.cc -o CMakeFiles/neutron_beam.dir/src/RunAction.cc.s
 
+CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o: CMakeFiles/neutron_beam.dir/flags.make
+CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o: ../src/SensitiveDetector.cc
+CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o: CMakeFiles/neutron_beam.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/storage/Jackie/Au_activation_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o -MF CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o.d -o CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o -c /storage/Jackie/Au_activation_test/src/SensitiveDetector.cc
+
+CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /storage/Jackie/Au_activation_test/src/SensitiveDetector.cc > CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.i
+
+CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /storage/Jackie/Au_activation_test/src/SensitiveDetector.cc -o CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.s
+
 CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o: CMakeFiles/neutron_beam.dir/flags.make
 CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o: ../src/StackingAction.cc
 CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o: CMakeFiles/neutron_beam.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/storage/Jackie/Au_activation_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/storage/Jackie/Au_activation_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o -MF CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o.d -o CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o -c /storage/Jackie/Au_activation_test/src/StackingAction.cc
 
 CMakeFiles/neutron_beam.dir/src/StackingAction.cc.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/neutron_beam.dir/src/StackingAction.cc.s: cmake_force
 CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o: CMakeFiles/neutron_beam.dir/flags.make
 CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o: ../src/SteppingAction.cc
 CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o: CMakeFiles/neutron_beam.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/storage/Jackie/Au_activation_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/storage/Jackie/Au_activation_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o -MF CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o.d -o CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o -c /storage/Jackie/Au_activation_test/src/SteppingAction.cc
 
 CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.i: cmake_force
@@ -189,6 +203,7 @@ neutron_beam_OBJECTS = \
 "CMakeFiles/neutron_beam.dir/src/PhysicsList.cc.o" \
 "CMakeFiles/neutron_beam.dir/src/PrimaryGeneratorAction.cc.o" \
 "CMakeFiles/neutron_beam.dir/src/RunAction.cc.o" \
+"CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o" \
 "CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o" \
 "CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o"
 
@@ -201,6 +216,7 @@ neutron_beam: CMakeFiles/neutron_beam.dir/src/DetectorConstruction.cc.o
 neutron_beam: CMakeFiles/neutron_beam.dir/src/PhysicsList.cc.o
 neutron_beam: CMakeFiles/neutron_beam.dir/src/PrimaryGeneratorAction.cc.o
 neutron_beam: CMakeFiles/neutron_beam.dir/src/RunAction.cc.o
+neutron_beam: CMakeFiles/neutron_beam.dir/src/SensitiveDetector.cc.o
 neutron_beam: CMakeFiles/neutron_beam.dir/src/StackingAction.cc.o
 neutron_beam: CMakeFiles/neutron_beam.dir/src/SteppingAction.cc.o
 neutron_beam: CMakeFiles/neutron_beam.dir/build.make
@@ -252,7 +268,7 @@ neutron_beam: /opt/geant4/geant4-v11.2.2/install/lib/libG4global.so
 neutron_beam: /opt/geant4/geant4-v11.2.2/install/lib/libG4clhep.so
 neutron_beam: /opt/geant4/geant4-v11.2.2/install/lib/libG4ptl.so.2.3.3
 neutron_beam: CMakeFiles/neutron_beam.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/storage/Jackie/Au_activation_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable neutron_beam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/storage/Jackie/Au_activation_test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable neutron_beam"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/neutron_beam.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
