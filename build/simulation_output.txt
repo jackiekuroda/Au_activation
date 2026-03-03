@@ -2,7 +2,7 @@
 ======= Run Summary =======
 
 --- Source ---
- Total events simulated: 1000
+ Total events simulated: 10000000
 
 --- Detector Parameters ---
  Crystal radius: 34.1 mm 

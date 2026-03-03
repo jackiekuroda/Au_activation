@@ -18,7 +18,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
         G4Track *track = step->GetTrack();
         if (!track) return;
 
-        if (track->GetDefinition() == G4Gamma::GammaDefinition())
+/*        if (track->GetDefinition() == G4Gamma::GammaDefinition())
         {
            G4String pname = track->GetDefinition()->GetParticleName();
            G4String process = "unknown";
@@ -62,5 +62,22 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
 
 	   }
 	}
+*/
 
+
+   if (track->GetDefinition() == G4Neutron::NeutronDefinition())
+   {
+	G4String volume = track->GetVolume()->GetName();
+	if (volume == "PhysiWorld")
+	{
+		return;
+	}
+
+	if (volume == "physsource")
+	{
+		return;
+	}
+
+	track->SetTrackStatus(fStopAndKill);
+   }
 }

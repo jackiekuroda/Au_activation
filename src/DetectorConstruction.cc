@@ -122,7 +122,7 @@ void  DetectorConstruction::ConstructSource(G4LogicalVolume* motherLogicalVolume
 	G4VSolid * sourceShape = new G4Tubs("sourceShape", 0.*cm, 22.225/2*mm , 1.27/2*mm , sphi, dphi);
 	G4LogicalVolume * logSource= new G4LogicalVolume(sourceShape, Gold, "logsource",0,0,0);
 
-	new G4PVPlacement(0,G4ThreeVector(0.,0., 10. ),logSource,"physsource",motherLogicalVolume,false,0,fCheckOverlaps);
+	new G4PVPlacement(0,G4ThreeVector(0.,0., 7.5*cm ),logSource,"physsource",motherLogicalVolume,false,0,fCheckOverlaps);
 
 	G4VisAttributes* visAttSource = new G4VisAttributes(G4Colour(0,0.2,1.0));
 	visAttSource->G4VisAttributes::SetForceSolid(true);

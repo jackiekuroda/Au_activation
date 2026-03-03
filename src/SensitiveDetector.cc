@@ -4,8 +4,9 @@
 #include "G4AnalysisManager.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4Neutron.hh"
+#include "G4SystemOfUnits.hh"
 
-SensitiveDetector::SensitiveDetector(G4String name) 
+SensitiveDetector::SensitiveDetector(G4String name)
 : G4VSensitiveDetector(name), fTotalEnergyDeposited(0.)
 {}
 
@@ -18,9 +19,10 @@ void SensitiveDetector::Initialize(G4HCofThisEvent *)
 
 G4bool SensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *)
 {
-    G4Track *track = aStep->GetTrack();
+
+    G4double hitTime = aStep->GetPreStepPoint()->GetGlobalTime();
     //ignores neutrons used for activation
-    if (track->GetDefinition() == G4Neutron::Neutron() && track->GetParentID() == 0)
+    if (hitTime < 550*s)
     {
         return true;
     }
@@ -33,8 +35,8 @@ G4bool SensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *)
 void SensitiveDetector::EndOfEvent(G4HCofThisEvent *)
 {
     auto analysisManager = G4AnalysisManager::Instance();
-    if (fTotalEnergyDeposited > 2 * keV)
-    {	
+    if (fTotalEnergyDeposited > 100 * keV)
+    {
         analysisManager->FillH1(0, fTotalEnergyDeposited);
     }
 }
